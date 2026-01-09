@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card·pio Digital - QUIOSQUE DA PRACA</title>
+    <title>Card√°pio Digital - QUIOSQUE DA PRA√áA</title>
     <style>
         :root {
             --primary-color: #e63946;
@@ -18,7 +18,6 @@
             margin: 0;
             padding-top: 130px; 
             padding-bottom: 90px;
-            /* ConfiguraÁ„o da sua imagem local */
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fundo.jpg'); 
             background-size: cover;
             background-attachment: fixed;
@@ -26,7 +25,6 @@
             color: #333;
         }
 
-        /* HEADER E NAVEGA«√O */
         header {
             position: fixed;
             top: 0;
@@ -69,7 +67,6 @@
             font-size: 0.9rem;
         }
 
-        /* CONTE⁄DO */
         .container {
             max-width: 600px;
             margin: auto;
@@ -111,7 +108,6 @@
 
         .qty { font-weight: bold; font-size: 1.1rem; min-width: 20px; text-align: center; }
 
-        /* FORMUL¡RIO DE CHECKOUT (ESCONDIDO) */
         #checkout-section {
             display: none;
             position: fixed; bottom: 0; left: 0; right: 0;
@@ -127,7 +123,6 @@
             width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 1rem;
         }
 
-        /* RODAP… FIXO */
         .footer-cart {
             position: fixed; bottom: 0; width: 100%; background: white;
             padding: 15px; box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
@@ -150,12 +145,12 @@
 <body>
 
 <header>
-    <h1 class="header-title">Quiosque da Praca</h1>
+    <h1 class="header-title">Quiosque da Pra√ßa</h1>
     <nav class="nav-categories">
-        <a href="#fritos" class="nav-btn"> Fritos</a>
-        <a href="#assados" class="nav-btn"> Assados</a>
-        <a href="#bebidas" class="nav-btn"> Bebidas</a>
-        <a href="#doces" class="nav-btn"> Doces</a>
+        <a href="#fritos" class="nav-btn">üçó Fritos</a>
+        <a href="#assados" class="nav-btn">ü•ê Assados</a>
+        <a href="#bebidas" class="nav-btn">ü•§ Bebidas</a>
+        <a href="#doces" class="nav-btn">üç∞ Doces</a>
     </nav>
 </header>
 
@@ -165,19 +160,7 @@
         <div class="item-card" data-name="Coxinha de Frango" data-price="8.50">
             <div class="item-info">
                 <h3>Coxinha de Frango</h3>
-                <p>Massa de batata crocante com recheio de frango desfiado.</p>
-                <span class="price">R$ 8,50</span>
-            </div>
-            <div class="controls">
-                <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
-                <span class="qty">0</span>
-                <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
-            </div>
-        </div>
-        <div class="item-card" data-name="Kibe Recheado" data-price="8.50">
-            <div class="item-info">
-                <h3>Kibe Recheado</h3>
-                <p>Kibe tradicional recheado com carne temperada.</p>
+                <p>Massa de batata crocante com recheio de frango.</p>
                 <span class="price">R$ 8,50</span>
             </div>
             <div class="controls">
@@ -209,24 +192,8 @@
         <div class="item-card" data-name="Refrigerante Lata" data-price="7.00">
             <div class="item-info">
                 <h3>Refrigerante Lata</h3>
-                <p>Coca-Cola, Guarana ou Fanta (350ml).</p>
+                <p>Coca-Cola, Guaran√° ou Fanta (350ml).</p>
                 <span class="price">R$ 7,00</span>
-            </div>
-            <div class="controls">
-                <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
-                <span class="qty">0</span>
-                <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="doces" class="category-section">
-        <h2 class="category-title">Doces</h2>
-        <div class="item-card" data-name="Brigadeiro Gourmet" data-price="5.00">
-            <div class="item-info">
-                <h3>Brigadeiro Gourmet</h3>
-                <p>Chocolate belga com granulado especial.</p>
-                <span class="price">R$ 5,00</span>
             </div>
             <div class="controls">
                 <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
@@ -244,39 +211,51 @@
 
 <div id="checkout-section">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-        <h3 style="margin:0;">Dados do Pedido</h3>
+        <h3 style="margin:0;">Finalizar Pedido</h3>
         <button onclick="closeCheckout()" style="border:none; background:#eee; padding:5px 12px; border-radius:5px; cursor:pointer;">Voltar</button>
     </div>
 
     <div class="input-group">
         <label>Seu Nome:</label>
-        <input type="text" id="client-name" placeholder="Ex: Jo„o Silva">
+        <input type="text" id="client-name" placeholder="Ex: Jo√£o Silva">
     </div>
     <div class="input-group">
         <label>Seu Telefone:</label>
         <input type="tel" id="client-phone" placeholder="(00) 00000-0000">
     </div>
     <div class="input-group">
-        <label>Como deseja receber?</label>
-        <select id="delivery-method" onchange="document.getElementById('address-box').style.display = (this.value=='Entrega'?'block':'none')">
-            <option value="Retirada">Vou retirar no local</option>
-            <option value="Entrega">Delivery (Entrega)</option>
-        </select>
-    </div>
-    <div class="input-group" id="address-box" style="display:none;">
-        <label>EndereÁo de Entrega:</label>
-        <input type="text" id="client-address" placeholder="Rua, n˙mero e bairro">
+        <label>Hor√°rio Desejado:</label>
+        <input type="time" id="order-time">
     </div>
     <div class="input-group">
-        <label>ObservaÁıes:</label>
-        <textarea id="order-obs" rows="2" placeholder="Ex: Alguma alergia ou preferÍncia?"></textarea>
+        <label>Forma de Recebimento:</label>
+        <select id="delivery-method" onchange="toggleDeliveryOptions()">
+            <option value="Retirada">Vou retirar no local (Sem Taxa)</option>
+            <option value="Entrega">Delivery (+ R$ 5,00 taxa)</option>
+        </select>
+    </div>
+    <div id="address-box" style="display:none;" class="input-group">
+        <label>Endere√ßo Completo:</label>
+        <input type="text" id="client-address" placeholder="Rua, n√∫mero e bairro">
+    </div>
+    <div class="input-group">
+        <label>Forma de Pagamento:</label>
+        <select id="payment-method">
+            <option value="Dinheiro">Dinheiro (PIX)</option>
+            <option value="Cart√£o">Cart√£o de Cr√©dito/D√©bito</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Observa√ß√µes:</label>
+        <textarea id="order-obs" rows="2" placeholder="Ex: Colocar maionese, troco para R$ 50..."></textarea>
     </div>
 
-    <button class="btn-whatsapp" onclick="sendWhatsApp()">?? Enviar para o WhatsApp</button>
+    <button class="btn-whatsapp" onclick="sendWhatsApp()">üöÄ Enviar Pedido via WhatsApp</button>
 </div>
 
 <script>
     let cart = {};
+    const DELIVERY_FEE = 5.00;
 
     function updateQty(btn, change) {
         const card = btn.closest('.item-card');
@@ -291,17 +270,27 @@
         if (currentQty > 0) cart[name] = { qty: currentQty, price: price };
         else delete cart[name];
         
-        calculateTotal();
+        updateTotalDisplay();
     }
 
-    function calculateTotal() {
-        let total = 0;
-        for (let item in cart) total += cart[item].qty * cart[item].price;
-        document.getElementById('total-price').innerText = total.toFixed(2).replace('.', ',');
+    function updateTotalDisplay() {
+        let totalItems = 0;
+        for (let item in cart) totalItems += cart[item].qty * cart[item].price;
+        
+        const method = document.getElementById('delivery-method').value;
+        const totalGeral = (method === 'Entrega') ? (totalItems + DELIVERY_FEE) : totalItems;
+        
+        document.getElementById('total-price').innerText = totalGeral.toFixed(2).replace('.', ',');
+    }
+
+    function toggleDeliveryOptions() {
+        const method = document.getElementById('delivery-method').value;
+        document.getElementById('address-box').style.display = (method === 'Entrega') ? 'block' : 'none';
+        updateTotalDisplay();
     }
 
     function openCheckout() {
-        if (Object.keys(cart).length === 0) return alert("Seu carrinho est· vazio!");
+        if (Object.keys(cart).length === 0) return alert("Seu carrinho est√° vazio!");
         document.getElementById('checkout-section').style.display = 'block';
     }
 
@@ -310,33 +299,44 @@
     }
 
     function sendWhatsApp() {
-        const phone = "5519983229686"; // <--- COLOQUE SEU WHATSAPP AQUI (apenas n˙meros)
+        const phone = "5519983229686"; 
         const name = document.getElementById('client-name').value;
         const tel = document.getElementById('client-phone').value;
+        const time = document.getElementById('order-time').value;
         const method = document.getElementById('delivery-method').value;
+        const payment = document.getElementById('payment-method').value;
         const address = document.getElementById('client-address').value;
         const obs = document.getElementById('order-obs').value;
 
-        if (!name || !tel) return alert("Por favor, informe seu nome e telefone!");
-        if (method === 'Entrega' && !address) return alert("Por favor, informe o endereÁo de entrega!");
+        if (!name || !tel || !time) return alert("Preencha Nome, Telefone e Hor√°rio!");
+        if (method === 'Entrega' && !address) return alert("Informe o endere√ßo!");
 
-        let message = `*NOVO PEDIDO - QUIOSQUE DA PRA«A*\n`;
+        let message = `*NOVO PEDIDO - QUIOSQUE DA PRA√áA*\n`;
         message += `--------------------------------\n`;
-        message += `?? *Cliente:* ${name}\n`;
-        message += `?? *Contato:* ${tel}\n`;
-        message += `?? *OpÁ„o:* ${method}\n`;
-        if(method === 'Entrega') message += `?? *EndereÁo:* ${address}\n`;
-        if(obs) message += `?? *Obs:* ${obs}\n`;
+        message += `üë§ *Cliente:* ${name}\n`;
+        message += `üìû *Contato:* ${tel}\n`;
+        message += `üïí *Hor√°rio:* ${time}\n`;
+        message += `üìç *Op√ß√£o:* ${method}\n`;
+        message += `üí≥ *Pagamento:* ${payment}\n`;
+        
+        if(method === 'Entrega') {
+            message += `üè† *Endere√ßo:* ${address}\n`;
+            message += `üöö *Taxa Entrega:* R$ ${DELIVERY_FEE.toFixed(2)}\n`;
+        }
+        
+        if(obs) message += `üìù *Obs:* ${obs}\n`;
         message += `--------------------------------\n\n`;
         message += `*ITENS:* \n`;
 
-        let total = 0;
+        let totalItems = 0;
         for (let item in cart) {
             let sub = cart[item].qty * cart[item].price;
-            message += `? ${cart[item].qty}x ${item} - R$ ${sub.toFixed(2)}\n`;
-            total += sub;
+            message += `‚úÖ ${cart[item].qty}x ${item} - R$ ${sub.toFixed(2)}\n`;
+            totalItems += sub;
         }
-        message += `\n?? *TOTAL: R$ ${total.toFixed(2)}*`;
+
+        const totalGeral = totalItems + (method === 'Entrega' ? DELIVERY_FEE : 0);
+        message += `\nüí∞ *TOTAL GERAL: R$ ${totalGeral.toFixed(2)}*`;
 
         window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
     }
